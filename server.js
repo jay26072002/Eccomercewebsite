@@ -9,14 +9,15 @@ import cors from "cors";
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+
 //configure env
 dotenv.config();
 
 //database config
 connectDB();
 //esmodulefix
-const__filename=fileURLToPath(import.meta.url);
-const__dirname=path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 //rest object
 const app = express()
 
