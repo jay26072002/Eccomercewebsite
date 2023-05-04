@@ -14,7 +14,7 @@ dotenv.config();
 //database config
 connectDB();
 //esmodulefix
-const__filename=fileURLToPath(import .meta.url);
+const__filename=fileURLToPath(import.meta.url);
 const__dirname=path.dirname(__filename);
 //rest object
 const app = express()
@@ -30,13 +30,10 @@ app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 //static files
 app.use(express.static(path.join(__dirname,"./client/build")))
-app.get('*',function(req,res){
+app.use('*',function(req,res){
     res.sendFile(path.join(__dirname,"./client/build/index.html"));
 })
 //rest api
-app.get('/', (req, res) => {
-    res.send("<h1>Welcome to ecommerce app</h1>")
-})
 
 //PORT
 const PORT = process.env.PORT;
